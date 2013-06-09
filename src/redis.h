@@ -1196,6 +1196,9 @@ void timeCommand(redisClient *c);
 void bitopCommand(redisClient *c);
 void bitcountCommand(redisClient *c);
 void replconfCommand(redisClient *c);
+/* ----- START Pheed HACK ------- */
+void hincrbyxCommand(redisClient *c);
+/* ----- END Pheed HACK ------- */
 
 #if defined(__GNUC__)
 void *calloc(size_t count, size_t size) __attribute__ ((deprecated));

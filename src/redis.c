@@ -183,6 +183,9 @@ struct redisCommand redisCommandTable[] = {
     {"hmset",hmsetCommand,-4,"wm",0,NULL,1,1,1,0,0},
     {"hmget",hmgetCommand,-3,"r",0,NULL,1,1,1,0,0},
     {"hincrby",hincrbyCommand,4,"wm",0,NULL,1,1,1,0,0},
+    /* ----- START Pheed HACK ------- */
+    {"hincrbyx",hincrbyxCommand,4,"wm",0,NULL,1,1,1,0,0},
+    /* ----- END Pheed HACK ------- */
     {"hincrbyfloat",hincrbyfloatCommand,4,"wm",0,NULL,1,1,1,0,0},
     {"hdel",hdelCommand,-3,"w",0,NULL,1,1,1,0,0},
     {"hlen",hlenCommand,2,"r",0,NULL,1,1,1,0,0},

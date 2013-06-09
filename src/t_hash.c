@@ -546,6 +546,17 @@ void hincrbyCommand(redisClient *c) {
     server.dirty++;
 }
 
+/* ----- START Pheed HACK ------- */
+void hincrbyxCommand(redisClient *c) {
+    robj *subject;
+
+    if ((subject = lookupKeyReadOrReply(c,c->argv[1],shared.czero)) == NULL ||
+        checkType(c,subject,REDIS_HASH)) return;
+
+    hincrbyCommand(c);
+}
+/* ----- END Pheed HACK ------- */
+
 void hincrbyfloatCommand(redisClient *c) {
     double long value, incr;
     robj *o, *current, *new, *aux;
